@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Master-->
+        <scene sceneID="cUi-kZ-frf">
+            <objects>
+                <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="RxB-wf-QIq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="64"/>
+        </scene>
+        <!--Swag List-->
+        <scene sceneID="VgW-fR-Quf">
+            <objects>
+                <tableViewController title="Swag List" id="pGg-6v-bdr" customClass="SwagListViewController" customModule="ApplePaySwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="100" id="m0d-ak-lc9" customClass="SwagCell" customModule="ApplePaySwag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="d3P-M7-ByW">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iAi-iT-yHc">
+                                            <rect key="frame" x="8" y="8" width="83" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="iAi-iT-yHc" secondAttribute="height" multiplier="1:1" id="bJv-QZ-1PK"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iOS Games by Tutorials" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOj-6c-fkv">
+                                            <rect key="frame" x="107" y="9" width="266" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$39.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMG-Gz-nb1">
+                                            <rect key="frame" x="107" y="70" width="52" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.97539487089999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iAi-iT-yHc" firstAttribute="top" secondItem="d3P-M7-ByW" secondAttribute="topMargin" id="1AW-YL-U24"/>
+                                        <constraint firstItem="ZOj-6c-fkv" firstAttribute="leading" secondItem="iAi-iT-yHc" secondAttribute="trailing" constant="16" id="4vr-Hj-AZ9"/>
+                                        <constraint firstItem="uMG-Gz-nb1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZOj-6c-fkv" secondAttribute="bottom" constant="5" id="9wI-fU-m8P"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZOj-6c-fkv" secondAttribute="trailing" id="LCO-YD-qPz"/>
+                                        <constraint firstItem="ZOj-6c-fkv" firstAttribute="leading" secondItem="uMG-Gz-nb1" secondAttribute="leading" id="TbN-56-imM"/>
+                                        <constraint firstItem="iAi-iT-yHc" firstAttribute="leading" secondItem="d3P-M7-ByW" secondAttribute="leadingMargin" id="cog-T1-YGE"/>
+                                        <constraint firstItem="ZOj-6c-fkv" firstAttribute="top" secondItem="iAi-iT-yHc" secondAttribute="top" constant="1" id="f1f-Dj-VZ4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iAi-iT-yHc" secondAttribute="bottom" id="hj1-2O-lQT"/>
+                                        <constraint firstItem="iAi-iT-yHc" firstAttribute="bottom" secondItem="uMG-Gz-nb1" secondAttribute="bottom" id="m3l-U4-2ph"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="priceLabel" destination="uMG-Gz-nb1" id="8Cn-C2-5h3"/>
+                                    <outlet property="swagImage" destination="iAi-iT-yHc" id="9tW-ah-8c4"/>
+                                    <outlet property="titleLabel" destination="ZOj-6c-fkv" id="Qht-p5-1Wu"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="jUr-3t-vfg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="pGg-6v-bdr" id="P41-gY-KXY"/>
+                            <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Razeware Swag" id="tQt-TN-PWz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="64"/>
+        </scene>
+        <!--Buy Swag-->
+        <scene sceneID="Cn3-H9-jdl">
+            <objects>
+                <viewController title="Buy Swag" id="Ah7-4n-0Wa" customClass="BuySwagViewController" customModule="ApplePaySwag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
+                        <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MMQ-IT-qOo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikl-gR-Jgg">
+                                <rect key="frame" x="204" y="528" width="194" height="64"/>
+                                <state key="normal" image="ApplePaySwagButton">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="purchase:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="pPd-DQ-4p1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aLa-2X-EEU">
+                                <rect key="frame" x="10" y="87" width="580" height="305"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="305" id="ytb-Yo-AEg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezh-5d-UOF">
+                                <rect key="frame" x="10" y="406" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$19.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNu-Xd-fnP">
+                                <rect key="frame" x="262" y="451" width="77" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.97539487089999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ezh-5d-UOF" firstAttribute="width" relation="lessThanOrEqual" secondItem="aLa-2X-EEU" secondAttribute="width" id="1us-oh-arH"/>
+                            <constraint firstItem="a0L-h9-sNL" firstAttribute="top" secondItem="ikl-gR-Jgg" secondAttribute="bottom" id="Gln-Gu-g64"/>
+                            <constraint firstItem="aLa-2X-EEU" firstAttribute="width" secondItem="MMQ-IT-qOo" secondAttribute="width" constant="-20" id="LEP-gF-lOm"/>
+                            <constraint firstItem="a0L-h9-sNL" firstAttribute="top" secondItem="ikl-gR-Jgg" secondAttribute="bottom" constant="8" id="MaE-hI-Xtg"/>
+                            <constraint firstItem="uNu-Xd-fnP" firstAttribute="top" secondItem="Ezh-5d-UOF" secondAttribute="bottom" constant="25" id="OaY-pb-h2m"/>
+                            <constraint firstItem="Ezh-5d-UOF" firstAttribute="top" secondItem="aLa-2X-EEU" secondAttribute="bottom" constant="14" id="Rfm-Re-s96"/>
+                            <constraint firstAttribute="centerX" secondItem="uNu-Xd-fnP" secondAttribute="centerX" id="UEy-Z6-Udo"/>
+                            <constraint firstItem="Ezh-5d-UOF" firstAttribute="leading" secondItem="aLa-2X-EEU" secondAttribute="leading" id="YxD-oF-uVI"/>
+                            <constraint firstAttribute="centerX" secondItem="ikl-gR-Jgg" secondAttribute="centerX" constant="-0.5" id="a0o-8F-rXV"/>
+                            <constraint firstAttribute="centerX" secondItem="aLa-2X-EEU" secondAttribute="centerX" id="j24-tR-mNz"/>
+                            <constraint firstItem="aLa-2X-EEU" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="23" id="k1k-fe-Tjw"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Gln-Gu-g64"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <connections>
+                        <outlet property="applePayButton" destination="ikl-gR-Jgg" id="AQH-jt-9VK"/>
+                        <outlet property="swagImage" destination="aLa-2X-EEU" id="LdB-Hl-ktk"/>
+                        <outlet property="swagPriceLabel" destination="uNu-Xd-fnP" id="8wX-di-go4"/>
+                        <outlet property="swagTitleLabel" destination="Ezh-5d-UOF" id="DDI-JR-K2u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1343" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ApplePaySwagButton" width="194" height="64"/>
+    </resources>
+</document>

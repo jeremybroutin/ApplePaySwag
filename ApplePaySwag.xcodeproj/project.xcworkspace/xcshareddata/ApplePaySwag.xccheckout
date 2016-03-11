@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B6B09B06-03C1-4A8C-9BA6-95BEE10C3E39</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ApplePaySwag</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>18970ADB8EFCEF892DB48323229EA7616CD79D40</key>
+		<string>https://github.com/eskerber/wenderlich-applepay-tutorial.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ApplePaySwag-Starter/ApplePaySwag.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>18970ADB8EFCEF892DB48323229EA7616CD79D40</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eskerber/wenderlich-applepay-tutorial.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>18970ADB8EFCEF892DB48323229EA7616CD79D40</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>18970ADB8EFCEF892DB48323229EA7616CD79D40</string>
+			<key>IDESourceControlWCCName</key>
+			<string>wenderlich-applepay-tutorial</string>
+		</dict>
+	</array>
+</dict>
+</plist>
