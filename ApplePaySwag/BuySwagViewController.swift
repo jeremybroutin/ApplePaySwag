@@ -57,6 +57,14 @@ class BuySwagViewController: UIViewController {
     request.countryCode = "US"
     request.currencyCode = "USD"
 
+    //Populate required address fields  based on swag type
+    switch(swag.swagType){
+    case .Delivered( _):
+      request.requiredShippingAddressFields = [PKAddressField.PostalAddress, PKAddressField.Phone]
+    case .Electronic:
+      request.requiredShippingAddressFields = PKAddressField.Email
+    }
+
     //Handling shipping, billing and contact info
     switch (swag.swagType){
     case .Delivered( _):
@@ -124,9 +132,72 @@ extension BuySwagViewController: PKPaymentAuthorizationViewControllerDelegate{
 
   // Handle user authorization to complete process
   func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: (PKPaymentAuthorizationStatus) -> Void) {
-    // TODO: Send payment request to backend for processing
-    // For now, simply hardcoding the completion block
-    completion(PKPaymentAuthorizationStatus.Success)
+    // 1
+    Stripe.setDefaultPublishableKey("pk_test_Lw58LdvivtUpI5UvvN7RABCb")
+    // 2 - Send the PKPayment to Stripe's servers for decryption, returned a STPToken
+    STPAPIClient.sharedClient().createTokenWithPayment(payment){
+      (token, error) -> Void in
+
+      if (error != nil) {
+        print(error)
+        completion(PKPaymentAuthorizationStatus.Failure)
+        return
+      }
+      // 3 - Build an address but only for physical swag
+      var shippingAddress = Address()
+      switch(self.swag.swagType){
+      case .Delivered( _):
+        shippingAddress = self.createShippingAddressFromRef(payment.shippingAddress)
+      case .Electronic:
+        break
+      }
+
+      // 4
+      let url = NSURL(string: "http://100.99.154.205/pay") //local ip address
+      let request = NSMutableURLRequest(URL: url!)
+      request.HTTPMethod = "POST"
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+      // 5 - Build HTTP request body based on swag type
+      var body: NSDictionary
+      switch(self.swag.swagType){
+      case .Delivered( _):
+        body = [
+          "stripeToken": token!.tokenId,
+          "amount": self.swag!.total().decimalNumberByDividingBy(NSDecimalNumber(string:"100")),
+          "description": self.swag!.title,
+          "shipping": [
+            "city": shippingAddress.City!,
+            "state": shippingAddress.State!,
+            "zip": shippingAddress.Zip!,
+            "firstname": shippingAddress.FirstName!,
+            "lastname": shippingAddress.LastName!
+          ]
+        ]
+      case .Electronic:
+        body = [
+          "stripeToken": token!.tokenId,
+          "amount": self.swag!.total().decimalNumberByDividingBy(NSDecimalNumber(string:"100")),
+          "description": self.swag!.title
+        ]
+      }
+
+      do {
+        request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions())
+      } catch let error {
+        print(error)
+      }
+      // 6 - Send the returned STPToken object to our own local server
+      NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){ (response, data, error) -> Void in
+        if (error != nil) {
+          completion(PKPaymentAuthorizationStatus.Failure)
+        }
+        else {
+          completion(PKPaymentAuthorizationStatus.Success)
+        }
+      }
+    }
   }
 
   // Close the payment view controller once the request is completed

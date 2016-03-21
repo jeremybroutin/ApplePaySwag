@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1E55B113F092506D9B9B0D /* libPods-ApplePaySwag.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F637828901717519A90E8F0C /* libPods-ApplePaySwag.a */; };
 		5B4D9BC919FF3EE4008FB471 /* SwagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4D9BC819FF3EE4008FB471 /* SwagCell.swift */; };
 		5BBCC39C19F7421E00412D16 /* Swag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBCC39B19F7421E00412D16 /* Swag.swift */; };
 		5BDACB6D19F1AC8D00630D5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDACB6C19F1AC8D00630D5D /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		304C39A60A22767B91B05270 /* Pods-ApplePaySwag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePaySwag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplePaySwag/Pods-ApplePaySwag.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4D9BC819FF3EE4008FB471 /* SwagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwagCell.swift; sourceTree = "<group>"; };
 		5B9C40791A009BEA00F9576C /* ApplePaySwag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ApplePaySwag-Bridging-Header.h"; sourceTree = "<group>"; };
 		5BBCC39B19F7421E00412D16 /* Swag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swag.swift; sourceTree = "<group>"; };
@@ -44,9 +46,11 @@
 		5BDACB7E19F1AC8D00630D5D /* ApplePaySwagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApplePaySwagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDACB8319F1AC8D00630D5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BDACB8419F1AC8D00630D5D /* ApplePaySwagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePaySwagTests.swift; sourceTree = "<group>"; };
+		76CF18A7A5618EF32CF9C41D /* Pods-ApplePaySwag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplePaySwag.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplePaySwag/Pods-ApplePaySwag.release.xcconfig"; sourceTree = "<group>"; };
 		D0BEB0E73BFE224F4D3C057C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CBDABC1C9213130062124D /* ApplePaySwag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ApplePaySwag.entitlements; sourceTree = "<group>"; };
 		E3CBDABD1C9362C20062124D /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		F637828901717519A90E8F0C /* libPods-ApplePaySwag.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApplePaySwag.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1E55B113F092506D9B9B0D /* libPods-ApplePaySwag.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,8 +76,18 @@
 			isa = PBXGroup;
 			children = (
 				D0BEB0E73BFE224F4D3C057C /* libPods.a */,
+				F637828901717519A90E8F0C /* libPods-ApplePaySwag.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		385BABB813B84F186EE95A8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				304C39A60A22767B91B05270 /* Pods-ApplePaySwag.debug.xcconfig */,
+				76CF18A7A5618EF32CF9C41D /* Pods-ApplePaySwag.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		5BDACB5E19F1AC8C00630D5D = {
@@ -82,6 +97,7 @@
 				5BDACB8119F1AC8D00630D5D /* ApplePaySwagTests */,
 				5BDACB6819F1AC8D00630D5D /* Products */,
 				072A130DC612F17496FC737B /* Frameworks */,
+				385BABB813B84F186EE95A8B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BDACB8819F1AC8D00630D5D /* Build configuration list for PBXNativeTarget "ApplePaySwag" */;
 			buildPhases = (
+				83B3BCB849EA6A20C011223F /* Check Pods Manifest.lock */,
 				5BDACB6319F1AC8C00630D5D /* Sources */,
 				5BDACB6419F1AC8C00630D5D /* Frameworks */,
 				5BDACB6519F1AC8C00630D5D /* Resources */,
+				57BCC0F48A969EF89959363B /* Embed Pods Frameworks */,
+				11325C38B245F190DFD9673C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,6 +259,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11325C38B245F190DFD9673C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplePaySwag/Pods-ApplePaySwag-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57BCC0F48A969EF89959363B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ApplePaySwag/Pods-ApplePaySwag-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83B3BCB849EA6A20C011223F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BDACB6319F1AC8C00630D5D /* Sources */ = {
@@ -375,35 +442,43 @@
 		};
 		5BDACB8919F1AC8D00630D5D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 304C39A60A22767B91B05270 /* Pods-ApplePaySwag.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ApplePaySwag/ApplePaySwag.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					STRIPE_ENABLE_APPLEPAY,
+				);
 				INFOPLIST_FILE = ApplePaySwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremybroutin.ApplePaySwag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ApplePaySwag/ApplePaySwag-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		5BDACB8A19F1AC8D00630D5D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76CF18A7A5618EF32CF9C41D /* Pods-ApplePaySwag.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ApplePaySwag/ApplePaySwag.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					STRIPE_ENABLE_APPLEPAY,
+				);
 				INFOPLIST_FILE = ApplePaySwag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremybroutin.ApplePaySwag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ApplePaySwag/ApplePaySwag-Bridging-Header.h";
 			};
 			name = Release;
 		};
